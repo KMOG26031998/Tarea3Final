@@ -41,14 +41,14 @@ public class MainActivity extends AppCompatActivity {
 
         recyclerView =(RecyclerView)findViewById(R.id.rvusuarios);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        Log.e("KR","casi");
+        
         gsonusuarios();
-        Log.e("KR","ya");
+        
 
     }
     public List<Usuarios> obtenerusuario(){
         List<Usuarios> usuario = new ArrayList<>();
-        usuario.add(new Usuarios("1234567890" ,"Hola","Chao","Quevedo","hotmail.com","https://i.ibb.co/TtDD6YX/embuandes-opt.jpg"));
+        
         Log.e("KR",""+usuario.size());
         return usuario;
     }
@@ -66,11 +66,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<List<Usuarios>> call, Response<List<Usuarios>> response) {
                 if (!response.isSuccessful()) {
-                    Log.e("KR","aqui");
+                
                     return;
                 }
                 List<Usuarios> postUsuarios = response.body();
-                Log.e("KR","aqui");
+          
                 recyclerViewAdapter = new RecyclerViewAdaptador(postUsuarios);
                 recyclerView.setAdapter(recyclerViewAdapter);
 
